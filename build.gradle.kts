@@ -20,8 +20,15 @@ tasks.test {
     useJUnitPlatform()
 }
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+tasks {
+    withType<JavaCompile> {
+        sourceCompatibility = "17"
+        targetCompatibility = "17"
+    }
+
+    withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = "17"
+    }
 }
 
 application {
